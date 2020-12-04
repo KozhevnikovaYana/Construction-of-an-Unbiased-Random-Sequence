@@ -1,0 +1,13 @@
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\bin\Debug\netcoreapp3.1\BernoulliSource.exe
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\bin\Debug\netcoreapp3.1\BernoulliSource.deps.json
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\bin\Debug\netcoreapp3.1\BernoulliSource.runtimeconfig.json
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\bin\Debug\netcoreapp3.1\BernoulliSource.runtimeconfig.dev.json
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\bin\Debug\netcoreapp3.1\BernoulliSource.dll
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\bin\Debug\netcoreapp3.1\BernoulliSource.pdb
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.csprojAssemblyReference.cache
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.AssemblyInfoInputs.cache
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.AssemblyInfo.cs
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.dll
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.pdb
+C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\BernoulliSource\obj\Debug\netcoreapp3.1\BernoulliSource.genruntimeconfig.cache
