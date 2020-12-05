@@ -1,13 +1,13 @@
 namespace Math.Functions
 {
-    public class RoFunction
+    public class RoFunction: IFunction
     {
         private readonly int[] _x;
-        private readonly double _s;
+        private readonly int _s;
         private readonly int _t;
         private readonly int _n;
         private readonly int _k;
-        public RoFunction(double s, int t, int n, int[] x, int k)
+        public RoFunction(int s, int t, int n, int[] x, int k)
         {
             _x = x;
             _s = s;
@@ -15,7 +15,7 @@ namespace Math.Functions
             _n = n;
             _k = k;
         }
-
+        
         public double Calculate()
         {
             if (_s == 0)

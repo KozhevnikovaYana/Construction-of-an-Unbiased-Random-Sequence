@@ -1,6 +1,8 @@
+using System;
+
 namespace Math.Functions
 {
-    public class PFunction
+    public class PFunction: IFunction
     {
         private readonly int[] _x;
         private readonly int _n;
@@ -17,9 +19,9 @@ namespace Math.Functions
         public double Calculate()
         {
             //числитель 
-            var numerator = Util.CombinationsNumber(_n - 1, _k - Util.MassiveSum(_x, _t));
+            var numerator = Util.CombinationsNumber(_n - _t, _k - Util.MassiveSum(_x, _t));
             //знаменатель
-            var denominator = Util.CombinationsNumber(_n - _t + 1, _k - Util.MassiveSum(_x, _t));
+            var denominator = Util.CombinationsNumber(_n - _t + 1, _k - Util.MassiveSum(_x, _t - 1));
             return numerator / denominator;
         }
     }

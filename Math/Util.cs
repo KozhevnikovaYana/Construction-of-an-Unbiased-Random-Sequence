@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Math
 {
@@ -6,6 +7,10 @@ namespace Math
     {
         public static double CombinationsNumber(int n, int k)
         {
+            if (n < k)
+            {
+                return 0;
+            }
             return ((double)Factorial(n))/(Factorial(k) * Factorial(n - k));
         }
 
@@ -16,6 +21,9 @@ namespace Math
 
         public static int MassiveSum(IReadOnlyList<int> x, int t)
         {
+            if (x.Count < t)
+                t = x.Count;
+            
             var sum = 0;
             for (var i = 0; i < t; ++i)
             {
@@ -23,6 +31,11 @@ namespace Math
             }
 
             return sum;
+        }
+
+        public static int CountOnes(IReadOnlyList<int> x)
+        {
+            return x.Sum();
         }
     }
 }

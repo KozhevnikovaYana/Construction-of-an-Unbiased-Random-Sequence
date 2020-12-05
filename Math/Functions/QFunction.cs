@@ -1,6 +1,8 @@
+using System;
+
 namespace Math.Functions
 {
-    public class QFunction
+    public class QFunction: IFunction
     {
         private readonly int[] _x;
         private readonly int _n;
@@ -17,10 +19,10 @@ namespace Math.Functions
         public double Calculate()
         {
             //числитель 
-            var numberator = Util.CombinationsNumber(_n - 1, _k - Util.MassiveSum(_x, _t));
+            var numerator = Util.CombinationsNumber(_n - _t, _k - Util.MassiveSum(_x, _t - 1));
             //знаменатель
-            var denominator = Util.CombinationsNumber(_n - _t + 1, _k - Util.MassiveSum(_x, _t));
-            return _x[_t - 1] *numberator / denominator;
+            var denominator = Util.CombinationsNumber(_n - _t + 1, _k - Util.MassiveSum(_x, _t - 1));
+            return _x[_t - 1] * numerator / denominator;
         }
     }
 }

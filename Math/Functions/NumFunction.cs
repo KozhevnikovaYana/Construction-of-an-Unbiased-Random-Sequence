@@ -2,7 +2,7 @@ using Math.Functions;
 
 namespace Math.Functions
 {
-    public class NumFunction
+    public class NumFunction: IFunction
     {
         private readonly int[] _x;
         private readonly int _n;
@@ -16,7 +16,7 @@ namespace Math.Functions
 
         public double Calculate()
         { 
-            LamdaFunction lamdaFunction = new LamdaFunction(System.Math.Log2(_n), 1, _n, _x, _k);
+            LamdaFunction lamdaFunction = new LamdaFunction((int)System.Math.Log2(_n), 1, _n, _x, _k);
             return lamdaFunction.Calculate() * Util.CombinationsNumber(_n, _k);
         }
     }
