@@ -1,5 +1,20 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ef5356f5_002Dc9c8_002D456f_002Dbe7f_002D02353eee894f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="QFunctionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=993a3611_002D0f86_002D4022_002D9ffa_002Dad2c0af84863/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="QFunctionTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.QFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.PFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.RoFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.LambdaFunctionTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9fc31401_002D041e_002D4353_002Da285_002D94c1538bf7de/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LambdaFunctionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.LambdaFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.NumFunctionTest1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.NumFunctionTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ef5356f5_002Dc9c8_002D456f_002Dbe7f_002D02353eee894f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="QFunctionTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test2.QFunctionTest&lt;/TestId&gt;&#xD;
@@ -10,5 +25,6 @@
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test2.NumFunctionTest1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.AlternativeNumFunctionTest.NumFunctionTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.AlternativeNumFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test3.QFunctionTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
