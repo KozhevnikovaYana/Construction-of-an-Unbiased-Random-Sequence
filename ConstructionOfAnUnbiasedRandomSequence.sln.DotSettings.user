@@ -7,5 +7,8 @@
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test2.RoFunctionTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test2.LambdaFunctionTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test2.NumFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test2.NumFunctionTest1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.AlternativeNumFunctionTest.NumFunctionTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.AlternativeNumFunctionTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

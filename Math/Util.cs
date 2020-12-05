@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -36,6 +37,22 @@ namespace Math
         public static int CountOnes(IReadOnlyList<int> x)
         {
             return x.Sum();
+        }
+        
+        public static int[] ConvertIntToArray2(int x)
+        {
+            var str = Convert.ToString(x, 2);
+            return ConvertStringToArray(str);
+        }
+        public static int[] ConvertStringToArray(string str)
+        {
+            var charArray = str.ToCharArray();
+            var intArray = new int[charArray.Length];
+            for (var i = 0; i < intArray.Length; ++i)
+            {
+                intArray[i] = charArray[i] - '0';
+            }
+            return intArray;
         }
     }
 }

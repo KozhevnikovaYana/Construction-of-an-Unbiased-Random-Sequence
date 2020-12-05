@@ -83,13 +83,21 @@ namespace Tests
             Assert.AreEqual(1.0 / 2, function5.Calculate());
             
             var function6 = new LamdaFunction(2, 1, 4, x, 2);
-            Assert.AreEqual(1.0 / 2, function6.Calculate());
+            Assert.AreEqual(3.0 / 4, function6.Calculate());
         }
         [Test]
         public void NumFunctionTest()
         {
-            NumFunction numFunction = new NumFunction(x, 4, 2);
-            Assert.AreEqual(3, numFunction.Calculate());
+            var numFunction = new NumFunction(x, 4, 2);
+            Assert.AreEqual(4, numFunction.Calculate());
+        }
+        [Test]
+        public void NumFunctionTest1()
+        {
+            int[] x1 = {1, 1, 0, 0 };
+            var numFunction = new NumFunction(x1, 4, 2);
+            Assert.AreEqual(5, numFunction.Calculate());
         }
     }
+    
 }
