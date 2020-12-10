@@ -4,19 +4,19 @@ namespace Math.Functions
 {
     public class NumFunction: IFunction
     {
-        private readonly int[] _x;
-        private readonly int _n;
-        private readonly int _k;
-        public NumFunction(int[] x, int n, int k)
+        private readonly Fraction[] _x;
+        private readonly Fraction _n;
+        private readonly Fraction _k;
+        public NumFunction(Fraction[] x, Fraction n, Fraction k)
         {
             _x = x;
             _n = n;
             _k = k;
         }
 
-        public double Calculate()
+        public Fraction Calculate()
         { 
-            LamdaFunction lamdaFunction = new LamdaFunction((int)System.Math.Log2(_n), 1, _n, _x, _k);
+            var lamdaFunction = new LamdaFunction((int)System.Math.Log2(_n.GetNumerator()), 1, _n, _x, _k);
             return lamdaFunction.Calculate() * Util.CombinationsNumber(_n, _k);
         }
     }

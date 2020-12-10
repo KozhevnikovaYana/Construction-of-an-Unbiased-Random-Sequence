@@ -2,6 +2,6 @@ namespace Math.Functions
 {
     public interface IFunction
     {
-        public double Calculate();
+        public Fraction Calculate();
     }
 }

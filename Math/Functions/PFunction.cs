@@ -4,11 +4,11 @@ namespace Math.Functions
 {
     public class PFunction: IFunction
     {
-        private readonly int[] _x;
-        private readonly int _n;
+        private readonly Fraction[] _x;
+        private readonly Fraction _n;
         private readonly int _t;
-        private readonly int _k;
-        public PFunction(int[] x, int n, int t, int k)
+        private readonly Fraction _k;
+        public PFunction(Fraction[] x, Fraction n, int t, Fraction k)
         {
             _x = x;
             _n = n;
@@ -16,7 +16,7 @@ namespace Math.Functions
             _k = k;
         }
 
-        public double Calculate()
+        public Fraction Calculate()
         {
             //числитель 
             var numerator = Util.CombinationsNumber(_n - _t, _k - Util.MassiveSum(_x, _t));

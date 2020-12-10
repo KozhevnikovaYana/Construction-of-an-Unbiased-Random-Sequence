@@ -6,8 +6,8 @@ namespace Math
 {
     public class Algorithm
     {
-        private int _n;
-        private int[] _x;
+        private Fraction _n;
+        private Fraction[] _x;
 
         public Algorithm()
         {
@@ -19,13 +19,13 @@ namespace Math
             Console.Out.Write("Введите последовательность: ");
             _x = Util.ConvertStringToArray(Console.In.ReadLine());
             Console.Out.Write("Введите N: ");
-            _n = int.Parse(Console.In.ReadLine() ?? "4");
+            _n = new Fraction(int.Parse(Console.In.ReadLine() ?? "4"));
         }
      
         public void Run()
         {
-            var code = new List<int>();
-            int startIndex = 0;
+            var code = new List<Fraction>();
+            var startIndex = new Fraction(0);
             while (startIndex < _x.Length - 1)
             {
                 var destinationArray = CalculateArray(startIndex,0);
@@ -39,24 +39,14 @@ namespace Math
             Console.Out.Write("Ответ: ");
             foreach (var t in code)
             {
-                Console.Out.Write(t);
+                Console.Out.Write(t.ToString());
             }
         }
 
-        private void AddCode(List<int> code, int num, int j)
+        public Fraction[] CalculateArray(Fraction sourceIndex, int destinationIndex)
         {
-            Console.Write("Код блока: ");
-            var array = Util.ConvertIntToArray2(num);
-            for (var i = array.Length  - j; i < array.Length; ++i)
-            {
-                code.Add(array[i]);
-                Console.Out.Write(array[i]);
-            }
-        }
-        public int[] CalculateArray(int sourceIndex, int destinationIndex)
-        {
-            var destinationArray = new int[_n];
-            Array.Copy(_x, sourceIndex, destinationArray, destinationIndex, _n);
+            var destinationArray = new Fraction[_n.GetNumerator()];
+            Array.Copy(_x, sourceIndex.GetNumerator(), destinationArray, destinationIndex, _n.GetNumerator());
             Console.Out.Write("Блок = ");
             for (var i = 0; i < _n; ++i)
             {
@@ -65,27 +55,24 @@ namespace Math
             Console.WriteLine();
             return destinationArray;
         }
-
-        private int CalculateK(IReadOnlyList<int> array)
+        private Fraction CalculateK(IReadOnlyList<Fraction> array)
         {
             var k = Util.CountOnes(array);
             Console.Out.WriteLine("K = " + k);
             return k;
         }
-        private int CalculateNum(int[] partArray, int k)
+        private Fraction CalculateNum(Fraction[] partArray, Fraction k)
         { 
-           /* var function = new NumFunction(partArray, _n, k);
-            var num =(int)System.Math.Round(function.Calculate());*/
-            var function = new AlternativeNumFunction(partArray, _n, k);
-            var num =(int)System.Math.Round(function.Calculate());
+            var function = new NumFunction(partArray, _n, k);
+            var num = function.Calculate();
             Console.Out.WriteLine("Num = " + num);
             return num;
         }
-        private void FindBounds(int num, int k, out int answerI, out int answerJ)
+        private void FindBounds(Fraction num, Fraction k, out int answerI, out int answerJ)
         {
             answerI = 0;
             answerJ = 0;
-            var sK = (int)Util.CombinationsNumber(_n, k);
+            var sK = Util.CombinationsNumber(_n, k);
             var countElementsArray = Util.ConvertIntToArray2(sK);
             Console.Out.Write("S_k = " + sK + " =");
             foreach (var t in countElementsArray)
@@ -102,10 +89,10 @@ namespace Math
                 {
                     Console.Out.WriteLine("Iteration i = " + i + " j = " + j);
                     var leftSum = Sum(countElementsArray, i);
-                    var rightSum = (Sum(countElementsArray, i) + System.Math.Pow(2, j));
+                    var rightSum = (Sum(countElementsArray, i) + (int) System.Math.Pow(2, j));
                     Console.Out.WriteLine("Проверка: " + leftSum + " < " + num + " < " + rightSum);
                     if ((Sum(countElementsArray, i) < num) &&
-                        (num < (Sum(countElementsArray, i) + System.Math.Pow(2, j))))
+                        (num < (Sum(countElementsArray, i) + (int)System.Math.Pow(2, j))))
                     {
                         answerI = i;
                         answerJ = j;
@@ -118,16 +105,26 @@ namespace Math
                 }
             }
         }
-
-        private double Sum(IReadOnlyList<int> countElementsArray, int i)
+        private Fraction Sum(IReadOnlyList<Fraction> countElementsArray, int i)
         {
-            double sum = 0;
+            Fraction sum = new Fraction(0);
             for (var r = 0; r < i; ++r)
             {
-                sum += countElementsArray[r] * System.Math.Pow(2, r);
+                sum = sum + countElementsArray[r] * (int) System.Math.Pow(2, r);
             }
 
             return sum;
+        }
+
+        private void AddCode(List<Fraction> code, Fraction num, int j)
+        {
+            Console.Write("Код блока: ");
+            var array = Util.ConvertIntToArray2(num);
+            for (var i = array.Length - j; i < array.Length; ++i)
+            {
+                code.Add(array[i]);
+                Console.Out.Write(array[i]);
+            }
         }
     }
 }
