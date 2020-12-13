@@ -1,5 +1,6 @@
-using Math;
-using Math.Functions;
+using System.Numerics;
+using Functions;
+using Functions.Functions;
 using NUnit.Framework;
 
 namespace Tests
@@ -9,9 +10,9 @@ namespace Tests
         [Test]
         public void NumFunctionTest0()
         {
-            Fraction[] x = {new Fraction(0), new Fraction(0), new Fraction(1), new Fraction(1)};
-            var n = new Fraction(4);
-            var k = new Fraction(2);
+            Fraction[] x = {new Fraction(new BigInteger(0)), new Fraction(new BigInteger(0)), new Fraction(new BigInteger(1)), new Fraction(new BigInteger(1))};
+            var n = new Fraction(new BigInteger(4));
+            var k = new Fraction(new BigInteger(2));
             var numFunction = new NumFunction(x, n, k);
             Assert.AreEqual(new Fraction(0), numFunction.Calculate());
         }

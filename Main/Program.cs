@@ -1,6 +1,5 @@
-﻿using System;
-using Math;
-using Math.Functions;
+﻿
+using Functions;
 
 namespace BernoulliSource
 {

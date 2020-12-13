@@ -1,5 +1,6 @@
-using Math;
-using Math.Functions;
+
+using Functions;
+using Functions.Functions;
 using NUnit.Framework;
 
 namespace Tests

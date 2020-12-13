@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Math\Math.csproj" />
+      <ProjectReference Include="..\Functions\Functions.csproj" />
     </ItemGroup>
 
 </Project>

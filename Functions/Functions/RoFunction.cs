@@ -1,4 +1,4 @@
-namespace Math.Functions
+namespace Functions.Functions
 {
     public class RoFunction: IFunction
     {

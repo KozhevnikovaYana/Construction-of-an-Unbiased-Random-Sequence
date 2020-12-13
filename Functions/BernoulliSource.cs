@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Math
+namespace Fuctions
 {
     public class BernoulliSource
     {

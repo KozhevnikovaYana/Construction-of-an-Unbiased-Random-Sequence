@@ -1,23 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=799fb1a0_002Dcc12_002D4afd_002D8caf_002D1712cb6b498e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NumTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6c597530_002D2cda_002D4e58_002Da6dd_002D42a6d0cc11a4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NumFunctionTest0" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.NumTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test1&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f862d612_002D2ba7_002D4851_002Dbaf5_002D1a48755fd5db/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NumTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.NumTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.Test1&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	
-	
-	
-	
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f932a43f_002D7d88_002D4b13_002Db9c9_002Da7dd646c4e52/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="NumFunctionTest0" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.NumTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C50920A5-9504-40B0-B881-6149B524C044::.NETCoreApp,Version=v3.1::Tests.NumTest.NumFunctionTest0&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

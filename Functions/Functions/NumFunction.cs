@@ -1,6 +1,7 @@
-using Math.Functions;
 
-namespace Math.Functions
+using System.Numerics;
+
+namespace Functions.Functions
 {
     public class NumFunction: IFunction
     {
@@ -15,8 +16,8 @@ namespace Math.Functions
         }
 
         public Fraction Calculate()
-        { 
-            var lamdaFunction = new LamdaFunction((int)System.Math.Log2(_n.GetNumerator()), 1, _n, _x, _k);
+        {
+            var lamdaFunction = new LamdaFunction((int)BigInteger.Log(_n.GetNumerator(), 2), 1, _n, _x, _k);
             return lamdaFunction.Calculate() * Util.CombinationsNumber(_n, _k);
         }
     }

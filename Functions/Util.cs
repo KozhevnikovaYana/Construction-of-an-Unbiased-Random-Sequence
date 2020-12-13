@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
-namespace Math
+namespace Functions
 {
     public static class Util
     {
@@ -47,7 +48,8 @@ namespace Math
         
         public static Fraction[] ConvertIntToArray2(Fraction x)
         {
-            var str = Convert.ToString(x.GetNumerator(), 2);
+            int number = ConvertBigIntegerToInt(x.GetNumerator());
+            String str = Convert.ToString(number, 2);
             return ConvertStringToArray(str);
         }
         public static Fraction[] ConvertStringToArray(string str)
@@ -56,33 +58,43 @@ namespace Math
             var intArray = new Fraction[charArray.Length];
             for (var i = 0; i < intArray.Length; ++i)
             {
-                intArray[i] = new Fraction(charArray[i] - '0');
+                BigInteger integer = new BigInteger(charArray[i] - '0');
+                intArray[i] = new Fraction(integer);
             }
             return intArray;
         }
-        
+        public static Fraction[] ConvertIntToArray(int number)
+        {
+            return ConvertStringToArray(number.ToString());
+        }
         
         // Возвращает наибольший общий делитель (Алгоритм Евклида)
-        public static int GetGreatestCommonDivisor(int a, int b)
+        public static BigInteger GetGreatestCommonDivisor(BigInteger a, BigInteger b)
         {
             while (b != 0)
             {
-                int temp = b;
+                BigInteger temp = b;
                 b = a % b;
                 a = temp;
             }
             return a;
         }
         // Возвращает наименьшее общее кратное
-        public static int GetLeastCommonMultiple(int a, int b)
+        public static BigInteger GetLeastCommonMultiple(BigInteger a, BigInteger b)
         {
-            // В формуле опушен модуль, так как в классе
-            // числитель всегда неотрицательный, а знаменатель -- положительный
-            // ...
-            // Деление здесь -- челочисленное, что не искажает результат, так как
-            // числитель и знаменатель делятся на свои делители,
-            // т.е. при делении не будет остатка
-            return a * b / GetGreatestCommonDivisor(a, b);
+            return (a * b / GetGreatestCommonDivisor(a, b));
+        }
+
+        public static int ConvertBigIntegerToInt(BigInteger num)
+        {
+            var str = num.ToString();
+            var answer = 0;
+            foreach (var character in str)
+            {
+                answer = answer * 10 + character - '0';
+            }
+
+            return answer;
         }
     }
 }

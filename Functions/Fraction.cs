@@ -1,34 +1,39 @@
 using System;
+using System.Numerics;
 
-namespace Math
+namespace Functions
 {
     public sealed class Fraction: IEquatable<Fraction>
     {
-        private int _numerator;				// Числитель
-        private int _denominator;			// Знаменатель
+        private BigInteger _numerator;				// Числитель
+        private BigInteger _denominator;			// Знаменатель
         private readonly int _sign;			// Знак
-
+        public BigInteger GetNumerator()
+        {
+            var fraction = Reduce();
+            _numerator = fraction._numerator;
+            _denominator = fraction._denominator;
+            return _numerator;
+        }
         #region Конструкторы
 
-        public Fraction(int numerator, int denominator)
+        public Fraction(BigInteger numerator, BigInteger denominator)
         {
-            if (denominator == 0)
+            if (denominator.IsZero)
             {
                 throw new DivideByZeroException("В знаменателе не может быть нуля");
             }
-            this._numerator = System.Math.Abs(numerator);
-            this._denominator = System.Math.Abs(denominator);
-            if (numerator * denominator < 0)
-            {
-                this._sign = -1;
-            }
-            else
-            {
-                this._sign = 1;
-            }
+            _sign = numerator.Sign * denominator.Sign;
+            if (_sign == 0)
+                _sign = 1;
+            _numerator = BigInteger.Negate(numerator);
+            _denominator = BigInteger.Negate(denominator);
+            if (denominator.Equals(0))
+                _denominator = new BigInteger(1);
+          
         }
         // Вызов первого конструктора со знаменателем равным единице
-        public Fraction(int number) : this(number, 1) { }        
+        public Fraction(BigInteger number) : this(number, new BigInteger(1)) { }        
 
         #endregion
 
@@ -47,32 +52,32 @@ namespace Math
         // Возвращает дробь, которая является результатом сложения или вычитания дробей a и b,
         // В зависимости от того, какая операция передана в параметр operation.
         // P.S. использовать только для сложения и вычитания
-        private static Fraction PerformOperation(Fraction a, Fraction b, Func<int, int, int> operation)
+        private static Fraction PerformOperation(Fraction a, Fraction b, Func<BigInteger, BigInteger, BigInteger> operation)
         {
             // Наименьшее общее кратное знаменателей
-            int leastCommonMultiple = Util.GetLeastCommonMultiple(a._denominator, b._denominator);
+            BigInteger leastCommonMultiple = Util.GetLeastCommonMultiple(a._denominator, b._denominator);
             // Дополнительный множитель к первой дроби
-            int additionalMultiplierFirst = leastCommonMultiple / a._denominator;
+            BigInteger additionalMultiplierFirst = leastCommonMultiple / a._denominator;
             // Дополнительный множитель ко второй дроби
-            int additionalMultiplierSecond = leastCommonMultiple / b._denominator;
+            BigInteger additionalMultiplierSecond = leastCommonMultiple / b._denominator;
             // Результат операции
-            int operationResult = operation(a._numerator * additionalMultiplierFirst * a._sign,
+            BigInteger operationResult = operation(a._numerator * additionalMultiplierFirst * a._sign,
                 b._numerator * additionalMultiplierSecond * b._sign);
             return new Fraction(operationResult, a._denominator * additionalMultiplierFirst);
         }
         
         // Возвращает сокращенную дробь
-        public Fraction Reduce()
+        private Fraction Reduce()
         {
-            Fraction result = this;
-            int greatestCommonDivisor = Util.GetGreatestCommonDivisor(this._numerator, this._denominator);
+            var result = this;
+            var greatestCommonDivisor = Util.GetGreatestCommonDivisor(this._numerator, this._denominator);
+            if (greatestCommonDivisor == 0) return result;
             result._numerator /= greatestCommonDivisor;
             result._denominator /= greatestCommonDivisor;
             return result;
         }
         #endregion
-
-
+        
         #region Перегрузка операторов
 
         #region Перегрузка оператора +
@@ -82,12 +87,12 @@ namespace Math
             return PerformOperation(a, b, (x, y) => x + y);
         }
         // Перегрузка оператора "+" для случая сложения дроби с числом
-        public static Fraction operator +(Fraction a, int b)
+        public static Fraction operator +(Fraction a, BigInteger b)
         {
             return a + new Fraction(b);
         }
         // Перегрузка оператора "+" для случая сложения числа с дробью
-        public static Fraction operator +(int a, Fraction b)
+        public static Fraction operator +(BigInteger a, Fraction b)
         {
             return b + a;
         }
@@ -100,12 +105,12 @@ namespace Math
             return PerformOperation(a, b, (x, y) => x - y);
         }
         // Перегрузка оператора "-" для случая вычитания из дроби числа
-        public static Fraction operator -(Fraction a, int b)
+        public static Fraction operator -(Fraction a, BigInteger b)
         {
             return a - new Fraction(b);
         }
         // Перегрузка оператора "-" для случая вычитания из числа дроби
-        public static Fraction operator -(int a, Fraction b)
+        public static Fraction operator -(BigInteger a, Fraction b)
         {
             return b - a;
         }
@@ -118,12 +123,12 @@ namespace Math
             return new Fraction(a._numerator * a._sign * b._numerator * b._sign, a._denominator * b._denominator);
         }
         // Перегрузка оператора "*" для случая произведения дроби и числа
-        public static Fraction operator *(Fraction a, int b)
+        public static Fraction operator *(Fraction a, BigInteger b)
         {
             return a * new Fraction(b);
         }
         // Перегрузка оператора "*" для случая произведения числа и дроби
-        public static Fraction operator *(int a, Fraction b)
+        public static Fraction operator *(BigInteger a, Fraction b)
         {
             return b * a;
         }
@@ -136,12 +141,12 @@ namespace Math
             return a * b.GetReverse();
         }
         // Перегрузка оператора "/" для случая деления дроби на число
-        public static Fraction operator /(Fraction a, int b)
+        public static Fraction operator /(Fraction a, BigInteger b)
         {
             return a / new Fraction(b);
         }
         // Перегрузка оператора "/" для случая деления числа на дробь
-        public static Fraction operator /(int a, Fraction b)
+        public static Fraction operator /(BigInteger a, Fraction b)
         {
             return new Fraction(a) / b;
         }
@@ -189,13 +194,16 @@ namespace Math
         // Переопределение метода GetHashCode
         public override int GetHashCode()
         {
-            return this._sign * (this._numerator * this._numerator + this._denominator * this._denominator);
+            return (this._sign * (this._numerator * this._numerator + this._denominator * this._denominator)).GetHashCode();
         }
         
             
         // Переопределение метода ToString
         public override string ToString()
         {
+            Fraction fraction = Reduce();
+            _numerator = fraction._numerator;
+            this._denominator = fraction._denominator;
             if (_numerator == 0)
             {
                 return "0";
@@ -233,12 +241,12 @@ namespace Math
             return a.Equals(b);
         }
         // Перегрузка оператора "Равенство" для дроби и числа
-        public static bool operator ==(Fraction a, int b)
+        public static bool operator ==(Fraction a, BigInteger b)
         {
             return a == new Fraction(b);
         }
         // Перегрузка оператора "Равенство" для числа и дроби
-        public static bool operator ==(int a, Fraction b)
+        public static bool operator ==(BigInteger a, Fraction b)
         {
             return new Fraction(a) == b;
         }
@@ -248,12 +256,12 @@ namespace Math
             return !(a == b);
         }
         // Перегрузка оператора "Неравенство" для дроби и числа
-        public static bool operator !=(Fraction a, int b)
+        public static bool operator !=(Fraction a, BigInteger b)
         {
             return a != new Fraction(b);
         }
         // Перегрузка оператора "Неравенство" для числа и дроби
-        public static bool operator !=(int a, Fraction b)
+        public static bool operator !=(BigInteger a, Fraction b)
         {
             return new Fraction(a) != b;
         }
@@ -285,12 +293,12 @@ namespace Math
             return a.CompareTo(b) > 0;
         }
         // Перегрузка оператора ">" для дроби и числа
-        public static bool operator >(Fraction a, int b)
+        public static bool operator >(Fraction a, BigInteger b)
         {
             return a > new Fraction(b);
         }
         // Перегрузка оператора ">" для числа и дроби
-        public static bool operator >(int a, Fraction b)
+        public static bool operator >(BigInteger a, Fraction b)
         {
             return new Fraction(a) > b;
         }
@@ -300,12 +308,12 @@ namespace Math
             return a.CompareTo(b) < 0;
         }
         // Перегрузка оператора "<" для дроби и числа
-        public static bool operator <(Fraction a, int b)
+        public static bool operator <(Fraction a, BigInteger b)
         {
             return a < new Fraction(b);
         }
         // Перегрузка оператора "<" для числа и дроби
-        public static bool operator <(int a, Fraction b)
+        public static bool operator <(BigInteger a, Fraction b)
         {
             return new Fraction(a) < b;
         }
@@ -315,12 +323,12 @@ namespace Math
             return a.CompareTo(b) >= 0;
         }
         // Перегрузка оператора ">=" для дроби и числа
-        public static bool operator >=(Fraction a, int b)
+        public static bool operator >=(Fraction a, BigInteger b)
         {
             return a >= new Fraction(b);
         }
         // Перегрузка оператора ">=" для числа и дроби
-        public static bool operator >=(int a, Fraction b)
+        public static bool operator >=(BigInteger a, Fraction b)
         {
             return new Fraction(a) >= b;
         }
@@ -330,22 +338,16 @@ namespace Math
             return a.CompareTo(b) <= 0;
         }
         // Перегрузка оператора "<=" для дроби и числа
-        public static bool operator <=(Fraction a, int b)
+        public static bool operator <=(Fraction a, BigInteger b)
         {
             return a <= new Fraction(b);
         }
         // Перегрузка оператора "<=" для числа и дроби
-        public static bool operator <=(int a, Fraction b)
+        public static bool operator <=(BigInteger a, Fraction b)
         {
             return new Fraction(a) <= b;
         }
         #endregion
         #endregion
-
-        public int GetNumerator()
-        {
-            return _numerator;
-
-        }
     }
 }
