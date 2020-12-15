@@ -1,9 +1,0 @@
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\bin\Debug\netcoreapp3.1\Fuctions.deps.json
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\bin\Debug\netcoreapp3.1\Fuctions.dll
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\bin\Debug\netcoreapp3.1\Fuctions.pdb
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\obj\Debug\netcoreapp3.1\Fuctions.csprojAssemblyReference.cache
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\obj\Debug\netcoreapp3.1\Fuctions.AssemblyInfoInputs.cache
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\obj\Debug\netcoreapp3.1\Fuctions.AssemblyInfo.cs
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\obj\Debug\netcoreapp3.1\Fuctions.csproj.CoreCompileInputs.cache
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\obj\Debug\netcoreapp3.1\Fuctions.dll
-C:\Users\user\Documents\MyProjects\bitbucket\study\The 4th course\Crypto\ConstructionOfAnUnbiasedRandomSequence\Fuctions\obj\Debug\netcoreapp3.1\Fuctions.pdb
